@@ -8,6 +8,20 @@
       "when": 1698900159405,
       "tag": "0000_melted_proudstar",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1698907770342,
+      "tag": "0001_silly_centennial",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1698909226364,
+      "tag": "0002_closed_wrecker",
+      "breakpoints": true
     }
   ]
 }

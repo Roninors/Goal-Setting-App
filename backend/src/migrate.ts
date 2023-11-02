@@ -10,7 +10,7 @@ const client = new Client({
     user: "postgres",
     password: process.env.DB_PASSWORD,
     database: "todo",
-  });
+});
 
 const connect = async () => {
     try { 
@@ -28,8 +28,12 @@ const db = drizzle(client);
 
 const migrateTables = async () => {
     try {
+        
         console.log("Migration started...");
         await migrate(db,{migrationsFolder: "drizzle"});
+        console.log("Migration ended...");
+        process.exit(0);
+
     } catch (error) {
         console.error(error);
     }
