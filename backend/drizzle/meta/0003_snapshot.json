@@ -1,8 +1,8 @@
 {
   "version": "5",
   "dialect": "pg",
-  "id": "f6a80008-054c-4ff2-a056-bce6955b4d26",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "2724f408-18da-439c-94ab-5c540529969f",
+  "prevId": "f72bb06b-fc48-4893-b073-16e1ef232d0a",
   "tables": {
     "goals": {
       "name": "goals",
@@ -42,7 +42,7 @@
         },
         "owner_id": {
           "name": "owner_id",
-          "type": "bigserial",
+          "type": "bigint",
           "primaryKey": false,
           "notNull": true
         },
@@ -55,7 +55,21 @@
         }
       },
       "indexes": {},
-      "foreignKeys": {},
+      "foreignKeys": {
+        "goals_owner_id_users_user_id_fk": {
+          "name": "goals_owner_id_users_user_id_fk",
+          "tableFrom": "goals",
+          "tableTo": "users",
+          "columnsFrom": [
+            "owner_id"
+          ],
+          "columnsTo": [
+            "user_id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
