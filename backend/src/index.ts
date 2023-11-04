@@ -1,5 +1,6 @@
 import express from "express"
-import { getAllUsers } from "./queries";
+import {router as userRoutes} from "./routes/userRoutes"
+
 require("dotenv").config()
 
 const app = express();
@@ -13,17 +14,9 @@ try {
     console.error(error)
 }
 
-app.get("/users",async(req,res)=>{
-    try {
-        const allUsers = await getAllUsers();
-        res.status(200).json(allUsers)
-    } catch (error) {
-        res.status(404).json({msg: error})
-    }
+app.use("/users",userRoutes);
 
-    
-     
-})
+
 
 
 
