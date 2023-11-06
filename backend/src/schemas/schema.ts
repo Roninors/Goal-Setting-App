@@ -11,7 +11,7 @@ export const users = mainSchema.table('users',{
 })
 
 export const usersRelation = relations(users,({many})=>({
-  posts: many(goals)
+  goals: many(goals)
 }))
 
 export const goals = mainSchema.table('goals',{

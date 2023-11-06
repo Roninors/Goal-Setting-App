@@ -2,7 +2,6 @@ import { drizzle } from "drizzle-orm/node-postgres";
 import { Client } from "pg";
 require("dotenv").config()
 import * as schema from "../src/schemas/schema"
-
 const client = new Client({
     host: "127.0.0.1",
     port: 5432,
@@ -11,6 +10,11 @@ const client = new Client({
     database: process.env.DB_NAME,
 });
 
-client.connect();
+try {
+    client.connect();
+    console.log("Connected to database");
+} catch (error) {
+    console.error(error)
+}
 
 export const db = drizzle(client,{schema});

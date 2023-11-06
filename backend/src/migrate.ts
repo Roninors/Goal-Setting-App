@@ -1,6 +1,8 @@
 import{ migrate } from "drizzle-orm/node-postgres/migrator"
 import { db } from "./db";
 
+
+
 const migrateTables = async () => {
     try {
         console.log("Migration started...");

@@ -11,6 +11,8 @@ app.use((req: Request,res: Response ,next: NextFunction)=>{
     next();
 })
 
+
+
 try {
     app.listen(process.env.PORT_NUM, ()=>{
         console.log("Listening on port", process.env.PORT_NUM );
@@ -18,7 +20,6 @@ try {
 }   catch (error) {
     console.error(error)
 }
-
 app.use("/users",userRoutes);
 
 
