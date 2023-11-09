@@ -1,5 +1,6 @@
-import { pgSchema,text,varchar,bigserial,timestamp,bigint,boolean } from "drizzle-orm/pg-core";
+import { pgSchema,text,varchar,bigserial,timestamp,bigint,boolean,integer } from "drizzle-orm/pg-core";
 import { relations, sql } from "drizzle-orm";
+
 export const mainSchema = pgSchema("mainSchema");
 
 export const users = mainSchema.table('users',{

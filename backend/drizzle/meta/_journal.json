@@ -5,29 +5,8 @@
     {
       "idx": 0,
       "version": "5",
-      "when": 1699006506384,
-      "tag": "0000_amazing_sentinel",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "5",
-      "when": 1699006526587,
-      "tag": "0001_clever_kylun",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "5",
-      "when": 1699007217908,
-      "tag": "0002_graceful_moonstone",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "5",
-      "when": 1699007827162,
-      "tag": "0003_slow_legion",
+      "when": 1699375014651,
+      "tag": "0000_rapid_the_leader",
       "breakpoints": true
     }
   ]

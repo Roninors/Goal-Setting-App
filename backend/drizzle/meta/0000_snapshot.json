@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "pg",
-  "id": "f6a80008-054c-4ff2-a056-bce6955b4d26",
+  "id": "7b9230c0-a7f8-4547-89c5-362f1ac9e90c",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "goals": {
@@ -42,7 +42,7 @@
         },
         "owner_id": {
           "name": "owner_id",
-          "type": "bigserial",
+          "type": "bigint",
           "primaryKey": false,
           "notNull": true
         },
@@ -55,7 +55,21 @@
         }
       },
       "indexes": {},
-      "foreignKeys": {},
+      "foreignKeys": {
+        "goals_owner_id_users_user_id_fk": {
+          "name": "goals_owner_id_users_user_id_fk",
+          "tableFrom": "goals",
+          "tableTo": "users",
+          "columnsFrom": [
+            "owner_id"
+          ],
+          "columnsTo": [
+            "user_id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },

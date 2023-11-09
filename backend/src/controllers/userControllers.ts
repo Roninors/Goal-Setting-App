@@ -1,14 +1,13 @@
 
 import { Request, Response } from "express";
-
-import { getAllUsersQuery, getOneUser } from "../queries";
+import { getAllUsersQuery, getOneUser,getUserGoals } from "../userQueries";
 
 export async function getAllUsers(req:Request,res:Response){
     try {
         const allUsers = await getAllUsersQuery();
-        res.status(200).json(allUsers)
+        res.status(200).json(allUsers);
     } catch (error) {
-        res.status(400).json({msg: error})
+        res.status(500).json({msg: error});
     }
 
 }
@@ -17,9 +16,24 @@ export async function getUser(req:Request,res:Response){
     const {id} = req.params;
     try {
         const user = await getOneUser(Number(id));
+        if(!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
         res.status(200).json(user)
     } catch (error) {
-        res.status(400).json({msg: error})
+        res.status(500).json({msg: error});
     }
+}
 
+export async function getGoals(req:Request,res:Response){
+    const {id} = req.params;
+    try {
+        const goals = await getUserGoals(Number(id));
+        if(!goals) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        res.status(200).json(goals)
+    } catch (error) {
+        res.status(500).json({msg: error});
+    }
 }
