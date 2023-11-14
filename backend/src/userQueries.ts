@@ -25,7 +25,7 @@ export async function getOneUser(id:number){
 
 
 export async function getUserGoals(id:number){
-    const goals = await db.query.goals.findFirst({
+    const goals = await db.query.goals.findMany({
         where : (goals)=> eq(goals.owner_id, Number(id))})  
     return goals;
 }
