@@ -1,6 +1,6 @@
 
 import { Request, Response } from "express";
-import { getAllUsersQuery, getOneUser,getUserGoals } from "../userQueries";
+import { getAllUsersQuery, getOneUser } from "../userQueries";
 
 export async function getAllUsers(req:Request,res:Response){
     try {
@@ -25,15 +25,3 @@ export async function getUser(req:Request,res:Response){
     }
 }
 
-export async function getGoals(req:Request,res:Response){
-    const {id} = req.params;
-    try {
-        const goals = await getUserGoals(Number(id));
-        if(!goals) {
-            return res.status(404).json({ message: 'User not found' });
-        }
-        res.status(200).json(goals)
-    } catch (error) {
-        res.status(500).json({msg: error});
-    }
-}

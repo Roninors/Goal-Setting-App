@@ -1,5 +1,6 @@
 import express from "express"
 import {router as userRoutes} from "./routes/userRoutes"
+import {router as goalRoutes} from "./routes/goalRoutes"
 import { Request, Response,NextFunction } from "express";
 require("dotenv").config()
 
@@ -21,7 +22,7 @@ try {
     console.error(error)
 }
 app.use("/users",userRoutes);
-
+app.use("/goals",goalRoutes);
 
 
 
