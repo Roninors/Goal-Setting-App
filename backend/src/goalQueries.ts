@@ -8,4 +8,3 @@ export async function getUserGoals(id:number){
     return goals;
 }
 
-function hello(){};
