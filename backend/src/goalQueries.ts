@@ -7,3 +7,5 @@ export async function getUserGoals(id:number){
         where : (goals)=> eq(goals.owner_id, Number(id))})  
     return goals;
 }
+
+function hello(){};
