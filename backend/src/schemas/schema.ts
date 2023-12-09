@@ -1,4 +1,4 @@
-import { pgSchema,text,varchar,bigserial,timestamp,bigint,boolean,integer } from "drizzle-orm/pg-core";
+import { pgSchema,text,varchar,bigserial,timestamp,bigint,boolean } from "drizzle-orm/pg-core";
 import { relations, sql } from "drizzle-orm";
 
 export const mainSchema = pgSchema("mainSchema");
@@ -33,7 +33,8 @@ export const goalsRelation = relations(goals,({one})=>({
 }))
 
 
-
+export type User = typeof users.$inferInsert;
+export type Goal = typeof goals.$inferInsert;
 
 
 

@@ -1,6 +1,6 @@
 
 import { Request, Response } from "express";
-import { getAllUsersQuery, getOneUser } from "../userQueries";
+import { getAllUsersQuery, getOneUser, insertUser } from "../userQueries";
 
 export async function getAllUsers(req:Request,res:Response){
     try {
@@ -25,3 +25,13 @@ export async function getUser(req:Request,res:Response){
     }
 }
 
+
+export async function registerUser(req:Request,res:Response){
+    const newUser = req.body;
+    try {
+        await insertUser(newUser);
+        res.status(200).json({mss: "User successfuly registered to database."})
+    } catch (error) {
+        res.status(500).json({msg: error});
+    }
+}
