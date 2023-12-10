@@ -2,7 +2,7 @@ import { eq } from "drizzle-orm";
 import { db } from "./db";
 import { User, users } from "./schemas/schema";
 
-export async function getAllUsersQuery(){
+export async function selectAllUsers(){
     const allUsers = await db.query.users.findMany({
         
         with: {
@@ -12,8 +12,7 @@ export async function getAllUsersQuery(){
     return allUsers
 } 
 
-
-export async function getOneUser(id:number){
+export async function selectOneUser(id:number){
     const oneUser = await db.query.users.findFirst({
         where : (users)=> eq(users.user_id, Number(id)),
         
@@ -22,13 +21,6 @@ export async function getOneUser(id:number){
         }
     })  
     return oneUser;
-}
-
-
-export async function getUserGoals(id:number){
-    const goals = await db.query.goals.findMany({
-        where : (goals)=> eq(goals.owner_id, Number(id))})  
-    return goals;
 }
 
 export async function insertUser(newUser:User){
