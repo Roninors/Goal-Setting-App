@@ -1,7 +1,7 @@
 import express from "express"
-import { addGoal, getGoals,singleGoal } from "../controllers/goalControllers";
+import { addGoal, getGoals,getSingleGoal } from "../controllers/goalControllers";
 export const router = express.Router();
 
 router.get("/allGoals/:id",getGoals);
-router.get("/singleGoal/:id",singleGoal)
+router.get("/singleGoal/:id",getSingleGoal)
 router.post("/addGoal",addGoal);

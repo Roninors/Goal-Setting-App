@@ -22,5 +22,6 @@ export async function selectOneUser(id:number){
 }
 
 export async function insertUser(newUser:User){
-    await db.insert(users).values(newUser);
+    const insertedUser = await db.insert(users).values(newUser).returning({ insertedId: users.user_id });;
+   return insertedUser;
 }

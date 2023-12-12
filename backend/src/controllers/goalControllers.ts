@@ -25,7 +25,7 @@ export async function addGoal(req:Request,res:Response){
     }
 }
 
-export async function singleGoal(req:Request,res:Response){
+export async function getSingleGoal(req:Request,res:Response){
     const {id} = req.params;
     try {
         const goals = await selectGoal(Number(id));

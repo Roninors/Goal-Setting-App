@@ -7,7 +7,7 @@ export const users = mainSchema.table('users',{
   user_id: bigserial("user_id", { mode: 'number' }).primaryKey(),
   username: varchar("username",{length:50}).notNull(),
   password: varchar("password",{length:50}).notNull(),
-  email: varchar("email",{length:50}).notNull(),
+  email: varchar("email",{length:50}).notNull().unique(),
   createdAt: timestamp("created_at").default(sql`CURRENT_TIMESTAMP`),
 })
 
