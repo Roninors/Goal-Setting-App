@@ -4,7 +4,6 @@ import { User, users } from "./schemas/schema";
 
 export async function selectAllUsers(){
     const allUsers = await db.query.users.findMany({
-        
         with: {
             goals : true
         }
@@ -15,7 +14,6 @@ export async function selectAllUsers(){
 export async function selectOneUser(id:number){
     const oneUser = await db.query.users.findFirst({
         where : (users)=> eq(users.user_id, Number(id)),
-        
         with: {
             goals:true
         }

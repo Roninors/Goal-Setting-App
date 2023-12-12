@@ -37,5 +37,4 @@ export type User = typeof users.$inferInsert;
 export type Goal = typeof goals.$inferInsert;
 
 
-
   
